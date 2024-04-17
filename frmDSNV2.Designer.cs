@@ -30,27 +30,19 @@ namespace BTL_QuanLyBanThuoc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSNV2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.sMaNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colXemChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tblNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyKhoThuocTayDataSet11 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnIn = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -69,6 +61,14 @@ namespace BTL_QuanLyBanThuoc
             this.rbThangNay = new System.Windows.Forms.RadioButton();
             this.lbHoaDonTitle = new System.Windows.Forms.Label();
             this.tblNhanVienTableAdapter1 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblNhanVienTableAdapter();
+            this.sMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colXemChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -119,17 +119,17 @@ namespace BTL_QuanLyBanThuoc
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Inter", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sMaNVDataGridViewTextBoxColumn,
+            this.sMaNV,
             this.sTenNV,
             this.iGioiTinh,
             this.dNgaySinh,
@@ -138,14 +138,14 @@ namespace BTL_QuanLyBanThuoc
             this.iTrangThai,
             this.colXemChiTiet});
             this.dgvNhanVien.DataSource = this.tblNhanVienBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(20, 59);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(20, 10, 20, 10);
@@ -157,68 +157,6 @@ namespace BTL_QuanLyBanThuoc
             this.dgvNhanVien.DataSourceChanged += new System.EventHandler(this.dgvHoaDon_DataSourceChanged);
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             this.dgvNhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHoaDon_CellFormatting);
-            // 
-            // sMaNVDataGridViewTextBoxColumn
-            // 
-            this.sMaNVDataGridViewTextBoxColumn.DataPropertyName = "sMaNV";
-            this.sMaNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
-            this.sMaNVDataGridViewTextBoxColumn.Name = "sMaNVDataGridViewTextBoxColumn";
-            this.sMaNVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sTenNV
-            // 
-            this.sTenNV.DataPropertyName = "sTenNV";
-            this.sTenNV.HeaderText = "Tên nhân viên";
-            this.sTenNV.Name = "sTenNV";
-            this.sTenNV.ReadOnly = true;
-            // 
-            // iGioiTinh
-            // 
-            this.iGioiTinh.DataPropertyName = "iGioiTinh";
-            this.iGioiTinh.HeaderText = "Giới tính";
-            this.iGioiTinh.Name = "iGioiTinh";
-            this.iGioiTinh.ReadOnly = true;
-            // 
-            // dNgaySinh
-            // 
-            this.dNgaySinh.DataPropertyName = "dNgaySinh";
-            this.dNgaySinh.HeaderText = "Ngày sinh";
-            this.dNgaySinh.Name = "dNgaySinh";
-            this.dNgaySinh.ReadOnly = true;
-            // 
-            // sChucVu
-            // 
-            this.sChucVu.DataPropertyName = "sChucVu";
-            this.sChucVu.HeaderText = "Chức vụ";
-            this.sChucVu.Name = "sChucVu";
-            this.sChucVu.ReadOnly = true;
-            // 
-            // sDiaChi
-            // 
-            this.sDiaChi.DataPropertyName = "sDiaChi";
-            this.sDiaChi.HeaderText = "Địa chỉ";
-            this.sDiaChi.Name = "sDiaChi";
-            this.sDiaChi.ReadOnly = true;
-            // 
-            // iTrangThai
-            // 
-            this.iTrangThai.DataPropertyName = "iTrangThai";
-            this.iTrangThai.HeaderText = "Trạng thái";
-            this.iTrangThai.Name = "iTrangThai";
-            this.iTrangThai.ReadOnly = true;
-            // 
-            // colXemChiTiet
-            // 
-            this.colXemChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.colXemChiTiet.DefaultCellStyle = dataGridViewCellStyle14;
-            this.colXemChiTiet.HeaderText = "Xem hóa đơn";
-            this.colXemChiTiet.Name = "colXemChiTiet";
-            this.colXemChiTiet.ReadOnly = true;
-            this.colXemChiTiet.Text = "Xem chi tiết";
-            this.colXemChiTiet.UseColumnTextForButtonValue = true;
-            this.colXemChiTiet.Width = 65;
             // 
             // tblNhanVienBindingSource
             // 
@@ -234,7 +172,7 @@ namespace BTL_QuanLyBanThuoc
             // 
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.btnIn);
+            this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.txtTimKiem);
@@ -268,18 +206,19 @@ namespace BTL_QuanLyBanThuoc
             this.panel3.Size = new System.Drawing.Size(15, 43);
             this.panel3.TabIndex = 7;
             // 
-            // btnIn
+            // btnCapNhat
             // 
-            this.btnIn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnIn.FlatAppearance.BorderSize = 0;
-            this.btnIn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Location = new System.Drawing.Point(825, 0);
-            this.btnIn.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(132, 43);
-            this.btnIn.TabIndex = 6;
-            this.btnIn.Text = "In hóa đơn";
-            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCapNhat.FlatAppearance.BorderSize = 0;
+            this.btnCapNhat.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(825, 0);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(132, 43);
+            this.btnCapNhat.TabIndex = 6;
+            this.btnCapNhat.Text = "Cập nhật nhân viên";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // panel4
             // 
@@ -299,7 +238,7 @@ namespace BTL_QuanLyBanThuoc
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(132, 43);
             this.btnHuy.TabIndex = 5;
-            this.btnHuy.Text = "Hủy hóa đơn";
+            this.btnHuy.Text = "nghỉ nhân viên";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnXoaHD_Click);
             // 
@@ -487,6 +426,68 @@ namespace BTL_QuanLyBanThuoc
             // 
             this.tblNhanVienTableAdapter1.ClearBeforeFill = true;
             // 
+            // sMaNV
+            // 
+            this.sMaNV.DataPropertyName = "sMaNV";
+            this.sMaNV.HeaderText = "Mã nhân viên";
+            this.sMaNV.Name = "sMaNV";
+            this.sMaNV.ReadOnly = true;
+            // 
+            // sTenNV
+            // 
+            this.sTenNV.DataPropertyName = "sTenNV";
+            this.sTenNV.HeaderText = "Tên nhân viên";
+            this.sTenNV.Name = "sTenNV";
+            this.sTenNV.ReadOnly = true;
+            // 
+            // iGioiTinh
+            // 
+            this.iGioiTinh.DataPropertyName = "iGioiTinh";
+            this.iGioiTinh.HeaderText = "Giới tính";
+            this.iGioiTinh.Name = "iGioiTinh";
+            this.iGioiTinh.ReadOnly = true;
+            // 
+            // dNgaySinh
+            // 
+            this.dNgaySinh.DataPropertyName = "dNgaySinh";
+            this.dNgaySinh.HeaderText = "Ngày sinh";
+            this.dNgaySinh.Name = "dNgaySinh";
+            this.dNgaySinh.ReadOnly = true;
+            // 
+            // sChucVu
+            // 
+            this.sChucVu.DataPropertyName = "sChucVu";
+            this.sChucVu.HeaderText = "Chức vụ";
+            this.sChucVu.Name = "sChucVu";
+            this.sChucVu.ReadOnly = true;
+            // 
+            // sDiaChi
+            // 
+            this.sDiaChi.DataPropertyName = "sDiaChi";
+            this.sDiaChi.HeaderText = "Địa chỉ";
+            this.sDiaChi.Name = "sDiaChi";
+            this.sDiaChi.ReadOnly = true;
+            // 
+            // iTrangThai
+            // 
+            this.iTrangThai.DataPropertyName = "iTrangThai";
+            this.iTrangThai.HeaderText = "Trạng thái";
+            this.iTrangThai.Name = "iTrangThai";
+            this.iTrangThai.ReadOnly = true;
+            // 
+            // colXemChiTiet
+            // 
+            this.colXemChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.colXemChiTiet.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colXemChiTiet.HeaderText = "Xem hóa đơn";
+            this.colXemChiTiet.Name = "colXemChiTiet";
+            this.colXemChiTiet.ReadOnly = true;
+            this.colXemChiTiet.Text = "Xem chi tiết";
+            this.colXemChiTiet.UseColumnTextForButtonValue = true;
+            this.colXemChiTiet.Width = 96;
+            // 
             // frmDSNV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,7 +525,7 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.Label lbHoaDonTitle;
         private System.Windows.Forms.GroupBox gbThoiGian;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtTimKiem;
@@ -538,7 +539,12 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.RadioButton rbToanThoiGian;
         private System.Windows.Forms.Label lbDen;
         private System.Windows.Forms.Label lbTu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sMaNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tblNhanVienBindingSource;
+        private System.Windows.Forms.GroupBox gbTrangThai;
+        private System.Windows.Forms.CheckBox cbDaThoiViec;
+        private System.Windows.Forms.CheckBox cbDangLamViec;
+        private QuanLyKhoThuocTayDataSet1TableAdapters.tblNhanVienTableAdapter tblNhanVienTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sMaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn iGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNgaySinh;
@@ -546,10 +552,5 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.DataGridViewTextBoxColumn sDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn iTrangThai;
         private System.Windows.Forms.DataGridViewButtonColumn colXemChiTiet;
-        private System.Windows.Forms.BindingSource tblNhanVienBindingSource;
-        private System.Windows.Forms.GroupBox gbTrangThai;
-        private System.Windows.Forms.CheckBox cbDaThoiViec;
-        private System.Windows.Forms.CheckBox cbDangLamViec;
-        private QuanLyKhoThuocTayDataSet1TableAdapters.tblNhanVienTableAdapter tblNhanVienTableAdapter1;
     }
 }

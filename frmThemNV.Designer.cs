@@ -45,13 +45,13 @@ namespace BTL_QuanLyBanThuoc
             this.txtChucVu = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.rbNam = new System.Windows.Forms.RadioButton();
             this.rbNu = new System.Windows.Forms.RadioButton();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -243,51 +243,17 @@ namespace BTL_QuanLyBanThuoc
             this.panel2.Size = new System.Drawing.Size(771, 473);
             this.panel2.TabIndex = 12;
             // 
-            // label10
+            // rbNu
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 25);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Thông tin nhân viên";
-            // 
-            // txtTenNhanVien
-            // 
-            this.txtTenNhanVien.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNhanVien.Location = new System.Drawing.Point(146, 139);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(515, 27);
-            this.txtTenNhanVien.TabIndex = 1;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(512, 282);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(149, 27);
-            this.txtSDT.TabIndex = 4;
-            // 
-            // dtpNgayVaoLam
-            // 
-            this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(512, 212);
-            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(149, 26);
-            this.dtpNgayVaoLam.TabIndex = 12;
-            this.dtpNgayVaoLam.Value = new System.DateTime(2024, 4, 16, 0, 0, 0, 0);
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(146, 212);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(149, 26);
-            this.dtpNgaySinh.TabIndex = 12;
-            this.dtpNgaySinh.Value = new System.DateTime(2024, 4, 16, 0, 0, 0, 0);
+            this.rbNu.AutoSize = true;
+            this.rbNu.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNu.Location = new System.Drawing.Point(560, 76);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Size = new System.Drawing.Size(49, 23);
+            this.rbNu.TabIndex = 13;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Nữ";
+            this.rbNu.UseVisualStyleBackColor = true;
             // 
             // rbNam
             // 
@@ -301,17 +267,52 @@ namespace BTL_QuanLyBanThuoc
             this.rbNam.Text = "Nam";
             this.rbNam.UseVisualStyleBackColor = true;
             // 
-            // rbNu
+            // dtpNgaySinh
             // 
-            this.rbNu.AutoSize = true;
-            this.rbNu.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNu.Location = new System.Drawing.Point(560, 76);
-            this.rbNu.Name = "rbNu";
-            this.rbNu.Size = new System.Drawing.Size(49, 23);
-            this.rbNu.TabIndex = 13;
-            this.rbNu.TabStop = true;
-            this.rbNu.Text = "Nữ";
-            this.rbNu.UseVisualStyleBackColor = true;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(146, 212);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(149, 26);
+            this.dtpNgaySinh.TabIndex = 12;
+            this.dtpNgaySinh.Value = new System.DateTime(2024, 4, 16, 0, 0, 0, 0);
+            // 
+            // dtpNgayVaoLam
+            // 
+            this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(512, 212);
+            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(149, 26);
+            this.dtpNgayVaoLam.TabIndex = 12;
+            this.dtpNgayVaoLam.Value = new System.DateTime(2024, 4, 16, 0, 0, 0, 0);
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(512, 282);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(149, 27);
+            this.txtSDT.TabIndex = 4;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            // 
+            // txtTenNhanVien
+            // 
+            this.txtTenNhanVien.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhanVien.Location = new System.Drawing.Point(146, 139);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(515, 27);
+            this.txtTenNhanVien.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Inter SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(212, 25);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Thông tin nhân viên";
             // 
             // frmThemNV
             // 

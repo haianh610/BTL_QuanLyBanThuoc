@@ -33,7 +33,8 @@ namespace BTL_QuanLyBanThuoc
             {
                 loiKhongMaNV = "Chưa nhập mã nhân viên";
                 loi = true;
-            }else if (Program.checkMa(dbConnect.ConnectionString, "tblNhanVien", "sMaNV", txtMaNhanVien.Text))
+            }
+            else if (Program.checkMa(dbConnect.ConnectionString, "tblNhanVien", "sMaNV", txtMaNhanVien.Text))
             {
                 loiTrungMa = "Đã có mã nhân viên này trong hệ thống";
                 loi = true;
@@ -43,12 +44,12 @@ namespace BTL_QuanLyBanThuoc
                 loiTenNhanVien = " \nChưa nhập tên nhân viên";
                 loi = true;
             }
-            if ((rbNam.Checked||rbNu.Checked) == false)
+            if ((rbNam.Checked || rbNu.Checked) == false)
             {
                 loiChuaNhapGioiTinh = "\nChưa chọn giới tính";
                 loi = true;
             }
-            if(dtpNgayVaoLam.Value.Year - dtpNgaySinh.Value.Year < 18)
+            if (dtpNgayVaoLam.Value.Year - dtpNgaySinh.Value.Year < 18)
             {
                 loiChuaDuTuoi = "\nNhân viên không được dưới 18 tuổi";
                 loi = true;
@@ -73,12 +74,12 @@ namespace BTL_QuanLyBanThuoc
                 them = true;
                 MessageBox.Show("Đã thêm");
 
-                NhanVien.themNV(dbConnect.ConnectionString, txtMaNhanVien.Text, txtTenNhanVien.Text,gt,dtpNgaySinh.Value,txtChucVu.Text,txtDiaChi.Text,txtSDT.Text,dtpNgayVaoLam.Value);
+                NhanVien.themNV(dbConnect.ConnectionString, txtMaNhanVien.Text, txtTenNhanVien.Text, gt, dtpNgaySinh.Value, txtChucVu.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Value);
                 this.Close();
             }
             else
             {
-                MessageBox.Show(loiKhongMaNV+loiTrungMa +loiTenNhanVien+ loiChuaNhapGioiTinh+loiChuaDuTuoi+loiChucVu+loiSDT, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(loiKhongMaNV + loiTrungMa + loiTenNhanVien + loiChuaNhapGioiTinh + loiChuaDuTuoi + loiChucVu + loiSDT, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -100,7 +101,7 @@ namespace BTL_QuanLyBanThuoc
                 }
                 else if (result == DialogResult.No)
                 {
-                    
+
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -109,5 +110,25 @@ namespace BTL_QuanLyBanThuoc
             }
         }
 
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSDT.TextLength >= 1)
+            {
+                // Kiểm tra xem văn bản có chứa ký tự không phải số không
+                if (!float.TryParse(txtSDT.Text, out _))
+                {
+                    // Nếu có ký tự không phải số, loại bỏ ký tự đó từ văn bản
+                    txtSDT.Text = txtSDT.Text.Remove(txtSDT.Text.Length - 1);
+                    // Đặt con trỏ văn bản ở cuối
+                    txtSDT.SelectionStart = txtSDT.Text.Length;
+                }
+            }
+            if (txtSDT.TextLength > 10)
+            {
+                txtSDT.Text = txtSDT.Text.Remove(txtSDT.Text.Length - 1);
+                txtSDT.SelectionStart = txtSDT.Text.Length;
+            }
+
+        }
     }
 }

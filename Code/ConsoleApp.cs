@@ -166,7 +166,7 @@ namespace BTL_QuanLyBanThuoc
                 dNgayVaoLam = Convert.ToDateTime(Console.ReadLine());
 
 
-                NhanVien.suaNV(dbConnect.ConnectionString, sMaNV, sTenNV, bGioiTinh, dNgaySinh, sChucVu, sDiaChi, sSDT, dNgayVaoLam);
+                NhanVien.suaNV(dbConnect.ConnectionString, sMaNV, sTenNV, bGioiTinh, dNgaySinh, sChucVu, sDiaChi, sSDT, dNgayVaoLam,1);
                 Console.WriteLine("Sua Thanh Cong");
 
                 i = true;

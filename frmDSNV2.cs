@@ -60,19 +60,11 @@ namespace BTL_QuanLyBanThuoc
                 if (dgvNhanVien.Columns[e.ColumnIndex].Name == "colXemChiTiet")
                 {
 
-                    HoaDon selectedHoaDon = HoaDon.GetHoaDon(dbConnect.ConnectionString, dgvNhanVien.CurrentRow.Cells["sMaHD"].Value.ToString());
-                    if (selectedHoaDon.iTrangThai == 0)
-                    {
-                        frmBanHang frm = new frmBanHang(selectedHoaDon);
-                        frm.FormClosed += frmBanHang_FormClosed;
-                        frm.ShowDialog();
-                    }
-                    else
-                    {
-                        chinhHD f2 = new chinhHD(selectedHoaDon);
-                        f2.MdiParent = this.MdiParent;
-                        f2.Show();
-                    }
+                    NhanVien selectedNhanVien = NhanVien.GetNhanVien(dgvNhanVien.CurrentRow.Cells["sMaNV"].Value.ToString());
+                    frmCapNhatNV f2 = new frmCapNhatNV(selectedNhanVien);
+                    f2.MdiParent = this.MdiParent;
+                    f2.FormClosed += frmBanHang_FormClosed;
+                    f2.Show();
                 }
             }
         }
@@ -173,6 +165,14 @@ namespace BTL_QuanLyBanThuoc
         private void rbKhoangThoiGian_CheckedChanged(object sender, EventArgs e)
         {
             dgvNhanVien.DataSource = NhanVien.locNhanVien(cbDangLamViec.Checked, cbDaThoiViec.Checked, rbThangNay.Checked, txtTimKiem.Text, rbKhoangThoiGian.Checked, dtpTu.Value, dtpDen.Value);
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            NhanVien selectedNhanVien = NhanVien.GetNhanVien(dgvNhanVien.CurrentRow.Cells["sMaNV"].Value.ToString());
+            frmCapNhatNV frm = new frmCapNhatNV(selectedNhanVien);
+            frm.FormClosed += frmBanHang_FormClosed;
+            frm.ShowDialog();
         }
     }
 }

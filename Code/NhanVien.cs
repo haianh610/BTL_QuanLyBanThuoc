@@ -4,67 +4,110 @@ using System.Data.SqlClient;
 
 namespace BTL_QuanLyBanThuoc
 {
-    class NhanVien
+    public class NhanVien
     {
-        ////Đặt các giá trị có trong object MatHang
-        //public string sMaNV { get; set; }
-        //public string sMaLH { get; set; }
-        //public string sTenHang { get; set; }
-        //public string sHangSX { get; set; }
-        //public string sDVT { get; set; }
-        //public float fDonGia { get; set; }
-        //public int iSoLuong { get; set; }
+        // Đặt các giá trị có trong object NhanVien
+        public string sMaNV { get; set; }
+        public string sTenNV { get; set; }
+        public int iGioiTinh { get; set; }
+        public DateTime dNgaySinh { get; set; }
+        public string sChucVu { get; set; }
+        public string sDiaChi { get; set; }
+        public string sSDT { get; set; }
+        public DateTime dNgayVaoLam { get; set; }
+        public int iTrangThai { get; set; } // Thêm trạng thái nhân viên
 
-        ////Overload cho việc khởi tạo object mặt hàng mới
-        //public NhanVien()
-        //{
-        //    // Khởi tạo object MatHang chưa có thông tin (thay đổi giá trị khởi tạo tùy thuộc vào null trong SQL)
-
-        //    sMaLH = "";
-        //    sTenHang = "";
-        //    sHangSX = "";
-        //    sDVT = "";
-        //    fDonGia = 0;
-        //    iSoLuong = 0;
-        //}
-
-        //public NhanVien(string maHang, string maLH, string tenHang, string hangSX, string DVT, float donGia, int soLuong, DateTime NSX, DateTime HSD)
-        //{
-
-        //    sMaLH = maLH;
-        //    sTenHang = tenHang;
-        //    sHangSX = hangSX;
-        //    sDVT = DVT;
-        //    fDonGia = donGia;
-        //    iSoLuong = soLuong;
-        //}
-
-        public static bool themNV(string connection, string sMaNV, string sTenNV, int iGioiTinh, DateTime dNgaySinh, string sChucVu, string sDiaChi, string sSDT, DateTime dNgayVaoLam)
+        // Hàm khởi tạo mặc định
+        public NhanVien()
         {
-            using (SqlConnection cnn = new SqlConnection(connection))
-            {
-                using (SqlCommand insertcmd = new SqlCommand("UP_ThemNhanVien", cnn))
-                {
-                    insertcmd.CommandType = CommandType.StoredProcedure;
-                    insertcmd.Parameters.AddWithValue("@maNV", sMaNV);
-                    insertcmd.Parameters.AddWithValue("@tenNV", sTenNV);
-                    insertcmd.Parameters.AddWithValue("@gioiTinh", iGioiTinh);
-                    insertcmd.Parameters.AddWithValue("@ngaySinh", dNgaySinh);
-                    insertcmd.Parameters.AddWithValue("@chucVu", sChucVu);
-                    insertcmd.Parameters.AddWithValue("@diaChi", sDiaChi);
-                    insertcmd.Parameters.AddWithValue("@sdt", sSDT);
-                    insertcmd.Parameters.AddWithValue("@ngayVaoLam", dNgayVaoLam);
-                    insertcmd.Parameters.AddWithValue("@trangThai", 1);
-
-                    cnn.Open();
-                    int i = insertcmd.ExecuteNonQuery(); // i trả lại số cột bị ảnh hưởng
-                    cnn.Close();
-                    return i > 0; //Nếu số cột bị ảnh hưởng từ 1 trở lên thì báo true để thành công
-                }
-            }
+            // Khởi tạo object nhân viên chưa có thông tin
+            sMaNV = "";
+            sTenNV = "";
+            iGioiTinh = 0; // Giả sử 0 là không xác định
+            dNgaySinh = DateTime.MinValue;
+            sChucVu = "";
+            sDiaChi = "";
+            sSDT = "";
+            dNgayVaoLam = DateTime.MinValue;
+            iTrangThai = 0; // Giả sử 0 là không xác định
         }
 
-        public static bool suaNV(string connection, string sMaNV, string sTenNV, int bGioiTinh, DateTime dNgaySinh, string sChucVu, string sDiaChi, string sSDT, DateTime dNgayVaoLam)
+        // Hàm khởi tạo với thông tin nhân viên
+        public NhanVien(string maNV, string tenNV, int gioiTinh, DateTime ngaySinh, string chucVu, string diaChi, string sdt, DateTime ngayVaoLam, int trangThai)
+        {
+            sMaNV = maNV;
+            sTenNV = tenNV;
+            iGioiTinh = gioiTinh;
+            dNgaySinh = ngaySinh;
+            sChucVu = chucVu;
+            sDiaChi = diaChi;
+            sSDT = sdt;
+            dNgayVaoLam = ngayVaoLam;
+            iTrangThai = trangThai;
+        }
+
+        public static NhanVien GetNhanVien(string maNV)
+        {
+            NhanVien nhanVien = new NhanVien();
+
+            using (SqlConnection connection = new SqlConnection(dbConnect.ConnectionString))
+            {
+                string query = "SELECT * FROM tblNhanVien WHERE sMaNV = @maNV";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@maNV", maNV);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        nhanVien.sMaNV = reader["sMaNV"].ToString();
+                        nhanVien.sTenNV = reader["sTenNV"].ToString();
+                        nhanVien.iGioiTinh = Convert.ToInt32(reader["iGioiTinh"]);
+                        nhanVien.dNgaySinh = Convert.ToDateTime(reader["dNgaySinh"]);
+                        nhanVien.sChucVu = reader["sChucVu"].ToString();
+                        nhanVien.sDiaChi = reader["sDiaChi"].ToString();
+                        nhanVien.sSDT = reader["sSDT"].ToString();
+                        nhanVien.dNgayVaoLam = Convert.ToDateTime(reader["dNgayVaoLam"]);
+                        nhanVien.iTrangThai = Convert.ToInt32(reader["iTrangThai"]);
+                    }
+
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+
+            return nhanVien;
+        }
+
+
+        public static bool themNV(string connection, string sMaNV, string sTenNV, int iGioiTinh, DateTime dNgaySinh, string sChucVu, string sDiaChi, string sSDT, DateTime dNgayVaoLam)
+            {
+                using (SqlConnection cnn = new SqlConnection(connection))
+                {
+                    using (SqlCommand insertcmd = new SqlCommand("UP_ThemNhanVien", cnn))
+                    {
+                        insertcmd.CommandType = CommandType.StoredProcedure;
+                        insertcmd.Parameters.AddWithValue("@maNV", sMaNV);
+                        insertcmd.Parameters.AddWithValue("@tenNV", sTenNV);
+                        insertcmd.Parameters.AddWithValue("@gioiTinh", iGioiTinh);
+                        insertcmd.Parameters.AddWithValue("@ngaySinh", dNgaySinh);
+                        insertcmd.Parameters.AddWithValue("@chucVu", sChucVu);
+                        insertcmd.Parameters.AddWithValue("@diaChi", sDiaChi);
+                        insertcmd.Parameters.AddWithValue("@sdt", sSDT);
+                        insertcmd.Parameters.AddWithValue("@ngayVaoLam", dNgayVaoLam);
+                        insertcmd.Parameters.AddWithValue("@trangThai", 1);
+
+                        cnn.Open();
+                        int i = insertcmd.ExecuteNonQuery(); // i trả lại số cột bị ảnh hưởng
+                        cnn.Close();
+                        return i > 0; //Nếu số cột bị ảnh hưởng từ 1 trở lên thì báo true để thành công
+                    }
+                }
+            }
+
+        public static bool suaNV(string connection, string sMaNV, string sTenNV, int bGioiTinh, DateTime dNgaySinh, string sChucVu, string sDiaChi, string sSDT, DateTime dNgayVaoLam, int iTrangThai)
         {
             using (SqlConnection cnn = new SqlConnection(connection))
             {
@@ -79,6 +122,38 @@ namespace BTL_QuanLyBanThuoc
                     cmd.Parameters.AddWithValue("@diaChi", sDiaChi);
                     cmd.Parameters.AddWithValue("@sdt", sSDT);
                     cmd.Parameters.AddWithValue("@ngayVaoLam", dNgayVaoLam);
+                    cmd.Parameters.AddWithValue("@trangThai", iTrangThai);
+                    cnn.Open();
+                    int i = cmd.ExecuteNonQuery();
+                    cnn.Close();
+                    return i > 0;
+                }
+            }
+        }
+        public static bool thoiViecNV(string sMaNV)
+        {
+            using (SqlConnection cnn = new SqlConnection(dbConnect.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("UP_ThoiViecNhanVien", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@maNV", sMaNV);
+                    cnn.Open();
+                    int i = cmd.ExecuteNonQuery();
+                    cnn.Close();
+                    return i > 0;
+                }
+            }
+        }
+
+        public static bool huyThoiViecNV(string sMaNV)
+        {
+            using (SqlConnection cnn = new SqlConnection(dbConnect.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("UP_HuyThoiViecNhanVien", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@maNV", sMaNV);
                     cnn.Open();
                     int i = cmd.ExecuteNonQuery();
                     cnn.Close();

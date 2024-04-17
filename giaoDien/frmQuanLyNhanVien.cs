@@ -43,7 +43,7 @@ namespace BTL_QuanLyBanThuoc
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            NhanVien.suaNV(dbConnect.ConnectionString, txtMaNV.Text, txtTenNV.Text, cbxGioiTinh.SelectedIndex, dtpNgaySinh.Value, txtChucVu.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Value);
+            NhanVien.suaNV(dbConnect.ConnectionString, txtMaNV.Text, txtTenNV.Text, cbxGioiTinh.SelectedIndex, dtpNgaySinh.Value, txtChucVu.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Value,1);
             tblNhanVienTableAdapter.Fill(quanLyKhoThuocTayDataSet11.tblNhanVien);
         }
 
@@ -57,7 +57,7 @@ namespace BTL_QuanLyBanThuoc
         {
             if (Program.checkMa(dbConnect.ConnectionString, "tblNhanVien", "sMaNV", txtMaNV.Text))
             {
-                NhanVien.suaNV(dbConnect.ConnectionString, txtMaNV.Text, txtTenNV.Text, cbxGioiTinh.SelectedIndex, dtpNgaySinh.Value, txtChucVu.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Value);
+                NhanVien.suaNV(dbConnect.ConnectionString, txtMaNV.Text, txtTenNV.Text, cbxGioiTinh.SelectedIndex, dtpNgaySinh.Value, txtChucVu.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Value,1);
                 tblNhanVienTableAdapter.Fill(quanLyKhoThuocTayDataSet11.tblNhanVien);
             }
             else
