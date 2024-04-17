@@ -1,0 +1,7 @@
+{
+    "dotnet.defaultSolution": "BTL_QuanLyBanThuoc.sln",
+    "files.associations": {
+        "new": "cpp"
+    },
+    "dotnet.preferCSharpExtension": true
+}
