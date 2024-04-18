@@ -34,7 +34,7 @@ namespace BTL_QuanLyBanThuoc
             trangThai = hd.iTrangThai;
             phuongThuc = hd.iPhuongThucThanhToan;
             lbMaHD.Text =  "Mã HD: "+maHD;
-            txtKhachHang.Text = maKH;
+            cbbKhachHang.Text = maKH;
             lbNgayLap.Text = "Ngày lập: "+Convert.ToString(ngayLap);
             lbTongTien.Text = Convert.ToString(tongTien) + "đ";
             lbTrangThai.Text = HoaDon.checkTrangThaiHD(trangThai);
@@ -77,24 +77,10 @@ namespace BTL_QuanLyBanThuoc
 
 
 
-        private bool daChonVaChuyen;
+
         //Timer check xem timKiemControl.chon đã true chưa (tức nà user đã chọn vào mặt hàng)
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (timKiemKHControl.chonKhach == true)
-            {
-
-
-                txtKhachHang.Text = timKiemKHControl.maKhach + " - " + timKiemKHControl.tenKhach;
-                //daChonVaChuyen = true;
-
-                //ẩn kết quả
-                ketQuaKHContainer.Height = 0;
-                ketQuaKHContainer.Controls.Clear();
-                //reset lại trạng thái chọn về false
-                timKiemKHControl.chonKhach = false;
-                // Đã chọn và chuyển sang nudSoLuong
-            }
             if (tongTien != 0)
             {
                 panelPhuongThucThanhToan.Visible = true;
@@ -171,31 +157,8 @@ namespace BTL_QuanLyBanThuoc
             }
         }
 
-        private void txtKhachHang_TextChanged(object sender, EventArgs e)
-        {
-            if (txtKhachHang.TextLength >= 1)
-            {
-                // Xóa kết quả tìm kiếm mỗi khi thay đổi chữ trong textbox
-                ketQuaKHContainer.Controls.Clear();
-
-                // Truyền text ở ô tìm kiếm vào hàm kqTimKiem
-                timKiemKHControl timKiem = new timKiemKHControl();
-                timKiem.kqTimKiem(txtKhachHang.Text);
-                loadTimKiemKhachHang();
-                ketQuaKHContainer.Height = ketQuaKHContainer.Controls.Count * 54;
-            }
-            else
-            {
-                timKiemKHControl.maKhach = "";
-                ketQuaKHContainer.Height = 0;
-            }
-        }
 
 
-        private void nudSoLuong_Leave(object sender, EventArgs e)
-        {
-            daChonVaChuyen = false;
-        }
 
         private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
         {
@@ -251,7 +214,7 @@ namespace BTL_QuanLyBanThuoc
             string loiTienKhachTra="";
             string loiChuaNhapKhachHang = "";
 
-            if(txtKhachHang.TextLength==0||timKiemKHControl.maKhach == null)
+            if(cbbKhachHang.SelectedValue == null)
             {
                 loiChuaNhapKhachHang = "Chưa nhập khách hàng vào hóa đơn";
             }
@@ -294,33 +257,9 @@ namespace BTL_QuanLyBanThuoc
 
         }
 
-        private void txtKhachHang_Enter(object sender, EventArgs e)
-        {
-            if (txtKhachHang.Text == "Nhập khách hàng")
-            {
-                txtKhachHang.Text = "";
-                txtKhachHang.Font = new Font("Inter", 12, FontStyle.Regular); // Font Inter, cỡ 14, bình thường
-                txtKhachHang.ForeColor = Color.Black; // Màu chữ đen
-            }
-            else
-            {
-                ketQuaKHContainer.Height = ketQuaKHContainer.Controls.Count * 54;
-            }
-        }
 
-        private void txtKhachHang_Leave(object sender, EventArgs e)
-        {
-            if (!ketQuaKHContainer.ClientRectangle.Contains(ketQuaKHContainer.PointToClient(Cursor.Position)))
-            {
-                ketQuaKHContainer.Height = 0;
-            }
-            if (txtKhachHang.TextLength == 0)
-            {
-                txtKhachHang.Font = new Font("Inter", 12, FontStyle.Italic); // Font Inter, cỡ 12, bình thường
-                txtKhachHang.ForeColor = Color.Gray; // Màu chữ xám
-                txtKhachHang.Text = "Nhập khách hàng";
-            }
-        }
+
+
 
         private void btnLuuTam_Click(object sender, EventArgs e)
         {

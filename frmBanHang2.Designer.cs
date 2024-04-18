@@ -30,9 +30,9 @@ namespace BTL_QuanLyBanThuoc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvChiTietHD = new System.Windows.Forms.DataGridView();
@@ -69,8 +69,8 @@ namespace BTL_QuanLyBanThuoc
             this.btnLuuTam = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtKhachHang = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tblNhanVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -81,12 +81,12 @@ namespace BTL_QuanLyBanThuoc
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cbbMatHang = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tblNhanVienTableAdapterDS1 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblNhanVienTableAdapter();
             this.sP_ChiTietHoaDonTableAdapter2 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.SP_ChiTietHoaDonTableAdapter();
             this.ketQuaContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.ketQuaKHContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbbMatHang = new System.Windows.Forms.ComboBox();
             this.tblMatHangTableAdapter1 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblMatHangTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -153,14 +153,14 @@ namespace BTL_QuanLyBanThuoc
             this.dgvChiTietHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvChiTietHD.BackgroundColor = System.Drawing.Color.White;
             this.dgvChiTietHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sMaHang,
@@ -170,15 +170,15 @@ namespace BTL_QuanLyBanThuoc
             this.fThanhTien,
             this.colXoaHang});
             this.dgvChiTietHD.DataSource = this.sPChiTietHoaDonBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietHD.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietHD.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietHD.Location = new System.Drawing.Point(40, 20);
             this.dgvChiTietHD.Margin = new System.Windows.Forms.Padding(20, 20, 0, 20);
@@ -233,10 +233,10 @@ namespace BTL_QuanLyBanThuoc
             // colXoaHang
             // 
             this.colXoaHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.colXoaHang.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colXoaHang.DefaultCellStyle = dataGridViewCellStyle2;
             this.colXoaHang.FillWeight = 1.265567F;
             this.colXoaHang.HeaderText = "Xóa hàng";
             this.colXoaHang.Name = "colXoaHang";
@@ -564,8 +564,8 @@ namespace BTL_QuanLyBanThuoc
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel3.Controls.Add(this.cbbKhachHang);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.txtKhachHang);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(20, 20);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
@@ -573,6 +573,17 @@ namespace BTL_QuanLyBanThuoc
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
             this.panel3.Size = new System.Drawing.Size(432, 40);
             this.panel3.TabIndex = 0;
+            // 
+            // cbbKhachHang
+            // 
+            this.cbbKhachHang.DataSource = this.quanLyKhoThuocTayDataSet1;
+            this.cbbKhachHang.DisplayMember = "tblKhachHang.sTenKH";
+            this.cbbKhachHang.FormattingEnabled = true;
+            this.cbbKhachHang.Location = new System.Drawing.Point(10, 9);
+            this.cbbKhachHang.Name = "cbbKhachHang";
+            this.cbbKhachHang.Size = new System.Drawing.Size(353, 21);
+            this.cbbKhachHang.TabIndex = 2;
+            this.cbbKhachHang.ValueMember = "tblKhachHang.sMaKH";
             // 
             // button1
             // 
@@ -586,21 +597,6 @@ namespace BTL_QuanLyBanThuoc
             this.button1.TabIndex = 1;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // txtKhachHang
-            // 
-            this.txtKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKhachHang.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtKhachHang.Font = new System.Drawing.Font("Inter Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.txtKhachHang.Location = new System.Drawing.Point(10, 10);
-            this.txtKhachHang.Name = "txtKhachHang";
-            this.txtKhachHang.Size = new System.Drawing.Size(364, 20);
-            this.txtKhachHang.TabIndex = 0;
-            this.txtKhachHang.Text = "Nhập khách hàng";
-            this.txtKhachHang.TextChanged += new System.EventHandler(this.txtKhachHang_TextChanged);
-            this.txtKhachHang.Enter += new System.EventHandler(this.txtKhachHang_Enter);
-            this.txtKhachHang.Leave += new System.EventHandler(this.txtKhachHang_Leave);
             // 
             // panel1
             // 
@@ -709,7 +705,6 @@ namespace BTL_QuanLyBanThuoc
             0,
             0,
             0});
-            this.nudSoLuong.Leave += new System.EventHandler(this.nudSoLuong_Leave);
             // 
             // panel12
             // 
@@ -730,10 +725,20 @@ namespace BTL_QuanLyBanThuoc
             this.panel5.Size = new System.Drawing.Size(600, 29);
             this.panel5.TabIndex = 1;
             // 
+            // cbbMatHang
+            // 
+            this.cbbMatHang.DataSource = this.quanLyKhoThuocTayDataSet1;
+            this.cbbMatHang.DisplayMember = "tblMatHang.sTenHang";
+            this.cbbMatHang.FormattingEnabled = true;
+            this.cbbMatHang.Location = new System.Drawing.Point(8, 3);
+            this.cbbMatHang.Name = "cbbMatHang";
+            this.cbbMatHang.Size = new System.Drawing.Size(494, 21);
+            this.cbbMatHang.TabIndex = 0;
+            this.cbbMatHang.ValueMember = "tblMatHang.sMaHang";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // tblNhanVienTableAdapterDS1
             // 
@@ -756,17 +761,6 @@ namespace BTL_QuanLyBanThuoc
             this.ketQuaKHContainer.Name = "ketQuaKHContainer";
             this.ketQuaKHContainer.Size = new System.Drawing.Size(494, 0);
             this.ketQuaKHContainer.TabIndex = 7;
-            // 
-            // cbbMatHang
-            // 
-            this.cbbMatHang.DataSource = this.quanLyKhoThuocTayDataSet1;
-            this.cbbMatHang.DisplayMember = "tblMatHang.sTenHang";
-            this.cbbMatHang.FormattingEnabled = true;
-            this.cbbMatHang.Location = new System.Drawing.Point(8, 3);
-            this.cbbMatHang.Name = "cbbMatHang";
-            this.cbbMatHang.Size = new System.Drawing.Size(494, 21);
-            this.cbbMatHang.TabIndex = 0;
-            this.cbbMatHang.ValueMember = "tblMatHang.sMaHang";
             // 
             // tblMatHangTableAdapter1
             // 
@@ -804,7 +798,6 @@ namespace BTL_QuanLyBanThuoc
             this.panel4.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblNhanVienBindingSource1)).EndInit();
@@ -827,7 +820,6 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.Label lbNgayLap;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtKhachHang;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnLuuTam;
         private System.Windows.Forms.Button btnThanhToan;
@@ -873,5 +865,6 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.ComboBox cbbMatHang;
         private QuanLyKhoThuocTayDataSet1TableAdapters.tblMatHangTableAdapter tblMatHangTableAdapter1;
+        private System.Windows.Forms.ComboBox cbbKhachHang;
     }
 }
