@@ -32,7 +32,7 @@ namespace BTL_QuanLyBanThuoc
         private void btnThemHD_Click_1(object sender, EventArgs e)
         {
             HoaDon hd = new HoaDon();
-            //Về sau thay "NV001" dựa vào tài khoản đăng nhập
+            //Về sau thay "BH01" dựa vào tài khoản đăng nhập
             bool success = HoaDon.themHD(dbConnect.ConnectionString, "BH01", out hd); 
             if (success)
             {
@@ -185,6 +185,12 @@ namespace BTL_QuanLyBanThuoc
         private void rbKhoangThoiGian_CheckedChanged(object sender, EventArgs e)
         {
             dgvHoaDon.DataSource = HoaDon.locTrangThaiHoaDon(cbPhieuTam.Checked, cbHoanThanh.Checked, cbDaHuy.Checked, rbThangNay.Checked, txtTimKiem.Text, rbKhoangThoiGian.Checked, dtpTu.Value, dtpDen.Value);
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            frmInHoaDon frm = new frmInHoaDon(dgvHoaDon.CurrentRow.Cells["sMaHD"].Value.ToString());
+            frm.Show();
         }
     }
 }

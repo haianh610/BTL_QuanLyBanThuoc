@@ -32,11 +32,18 @@ namespace BTL_QuanLyBanThuoc
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListHoaDon2));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListHoaDon2));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.sMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNgayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sMaNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sMaKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fTongTienHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colXemChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tblHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyKhoThuocTayDataSet11 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,6 +53,7 @@ namespace BTL_QuanLyBanThuoc
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbTrangThai = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,25 +73,17 @@ namespace BTL_QuanLyBanThuoc
             this.rbThangNay = new System.Windows.Forms.RadioButton();
             this.lbHoaDonTitle = new System.Windows.Forms.Label();
             this.tblHoaDonTableAdapter = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblHoaDonTableAdapter();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.colXemChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.iTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fTongTienHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sMaKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sMaNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNgayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblHoaDonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyKhoThuocTayDataSet11)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.gbTrangThai.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.gbThoiGian.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -162,6 +162,61 @@ namespace BTL_QuanLyBanThuoc
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             this.dgvHoaDon.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHoaDon_CellFormatting);
             // 
+            // sMaHD
+            // 
+            this.sMaHD.DataPropertyName = "sMaHD";
+            this.sMaHD.HeaderText = "Mã hóa đơn";
+            this.sMaHD.Name = "sMaHD";
+            this.sMaHD.ReadOnly = true;
+            // 
+            // dNgayLapDataGridViewTextBoxColumn
+            // 
+            this.dNgayLapDataGridViewTextBoxColumn.DataPropertyName = "dNgayLap";
+            this.dNgayLapDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.dNgayLapDataGridViewTextBoxColumn.Name = "dNgayLapDataGridViewTextBoxColumn";
+            this.dNgayLapDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sMaNVDataGridViewTextBoxColumn
+            // 
+            this.sMaNVDataGridViewTextBoxColumn.DataPropertyName = "sMaNV";
+            this.sMaNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
+            this.sMaNVDataGridViewTextBoxColumn.Name = "sMaNVDataGridViewTextBoxColumn";
+            this.sMaNVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sMaKHDataGridViewTextBoxColumn
+            // 
+            this.sMaKHDataGridViewTextBoxColumn.DataPropertyName = "sMaKH";
+            this.sMaKHDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
+            this.sMaKHDataGridViewTextBoxColumn.Name = "sMaKHDataGridViewTextBoxColumn";
+            this.sMaKHDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fTongTienHDDataGridViewTextBoxColumn
+            // 
+            this.fTongTienHDDataGridViewTextBoxColumn.DataPropertyName = "fTongTienHD";
+            this.fTongTienHDDataGridViewTextBoxColumn.HeaderText = "Tổng tiền hàng";
+            this.fTongTienHDDataGridViewTextBoxColumn.Name = "fTongTienHDDataGridViewTextBoxColumn";
+            this.fTongTienHDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iTrangThai
+            // 
+            this.iTrangThai.DataPropertyName = "iTrangThai";
+            this.iTrangThai.HeaderText = "Trạng thái";
+            this.iTrangThai.Name = "iTrangThai";
+            this.iTrangThai.ReadOnly = true;
+            // 
+            // colXemChiTiet
+            // 
+            this.colXemChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.colXemChiTiet.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colXemChiTiet.HeaderText = "Xem hóa đơn";
+            this.colXemChiTiet.Name = "colXemChiTiet";
+            this.colXemChiTiet.ReadOnly = true;
+            this.colXemChiTiet.Text = "Xem chi tiết";
+            this.colXemChiTiet.UseColumnTextForButtonValue = true;
+            this.colXemChiTiet.Width = 65;
+            // 
             // tblHoaDonBindingSource
             // 
             this.tblHoaDonBindingSource.DataMember = "tblHoaDon";
@@ -222,6 +277,7 @@ namespace BTL_QuanLyBanThuoc
             this.btnIn.TabIndex = 6;
             this.btnIn.Text = "In hóa đơn";
             this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // panel4
             // 
@@ -254,6 +310,17 @@ namespace BTL_QuanLyBanThuoc
             this.txtTimKiem.Size = new System.Drawing.Size(280, 27);
             this.txtTimKiem.TabIndex = 3;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(13, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -486,72 +553,6 @@ namespace BTL_QuanLyBanThuoc
             // 
             this.tblHoaDonTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(13, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // colXemChiTiet
-            // 
-            this.colXemChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.colXemChiTiet.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colXemChiTiet.HeaderText = "Xem hóa đơn";
-            this.colXemChiTiet.Name = "colXemChiTiet";
-            this.colXemChiTiet.ReadOnly = true;
-            this.colXemChiTiet.Text = "Xem chi tiết";
-            this.colXemChiTiet.UseColumnTextForButtonValue = true;
-            this.colXemChiTiet.Width = 96;
-            // 
-            // iTrangThai
-            // 
-            this.iTrangThai.DataPropertyName = "iTrangThai";
-            this.iTrangThai.HeaderText = "Trạng thái";
-            this.iTrangThai.Name = "iTrangThai";
-            this.iTrangThai.ReadOnly = true;
-            // 
-            // fTongTienHDDataGridViewTextBoxColumn
-            // 
-            this.fTongTienHDDataGridViewTextBoxColumn.DataPropertyName = "fTongTienHD";
-            this.fTongTienHDDataGridViewTextBoxColumn.HeaderText = "Tổng tiền hàng";
-            this.fTongTienHDDataGridViewTextBoxColumn.Name = "fTongTienHDDataGridViewTextBoxColumn";
-            this.fTongTienHDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sMaKHDataGridViewTextBoxColumn
-            // 
-            this.sMaKHDataGridViewTextBoxColumn.DataPropertyName = "sMaKH";
-            this.sMaKHDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
-            this.sMaKHDataGridViewTextBoxColumn.Name = "sMaKHDataGridViewTextBoxColumn";
-            this.sMaKHDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sMaNVDataGridViewTextBoxColumn
-            // 
-            this.sMaNVDataGridViewTextBoxColumn.DataPropertyName = "sMaNV";
-            this.sMaNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
-            this.sMaNVDataGridViewTextBoxColumn.Name = "sMaNVDataGridViewTextBoxColumn";
-            this.sMaNVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dNgayLapDataGridViewTextBoxColumn
-            // 
-            this.dNgayLapDataGridViewTextBoxColumn.DataPropertyName = "dNgayLap";
-            this.dNgayLapDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.dNgayLapDataGridViewTextBoxColumn.Name = "dNgayLapDataGridViewTextBoxColumn";
-            this.dNgayLapDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sMaHD
-            // 
-            this.sMaHD.DataPropertyName = "sMaHD";
-            this.sMaHD.HeaderText = "Mã hóa đơn";
-            this.sMaHD.Name = "sMaHD";
-            this.sMaHD.ReadOnly = true;
-            // 
             // frmListHoaDon2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,13 +571,13 @@ namespace BTL_QuanLyBanThuoc
             ((System.ComponentModel.ISupportInitialize)(this.quanLyKhoThuocTayDataSet11)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.gbTrangThai.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.gbThoiGian.ResumeLayout(false);
             this.gbThoiGian.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
