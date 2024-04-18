@@ -379,10 +379,16 @@ namespace BTL_QuanLyBanThuoc
             string loiKhongCTHD="";
             string loiChuaNhapKhachThanhToan = "";
             string loiTienKhachTra="";
+            string loiChuaNhapKhachHang = "";
+
+            if(txtKhachHang.TextLength==0||timKiemKHControl.maKhach == null)
+            {
+                loiChuaNhapKhachHang = "Chưa nhập khách hàng vào hóa đơn";
+            }
 
             if (ChucNangChiTietHoaDon.CheckExsitCTHD(maHD)==false)
             {
-                loiKhongCTHD = "Chưa có chi tiết hóa đơn để thanh toán";
+                loiKhongCTHD = "\nChưa có chi tiết hóa đơn để thanh toán";
                 loi = true;
             }
             if(tongTien !=0)
@@ -407,11 +413,12 @@ namespace BTL_QuanLyBanThuoc
                 khachThanhToan = float.Parse(txtKhachThanhToan.Text);
                 HoaDon HDluu = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, trangThai, phuongThucRadioButton(),khachThanhToan);
                 HoaDon.suaHD(dbConnect.ConnectionString, HDluu);
+                skipMessageClose = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show(loiKhongCTHD + loiTienKhachTra + loiChuaNhapKhachThanhToan, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(loiChuaNhapKhachHang+loiKhongCTHD + loiTienKhachTra + loiChuaNhapKhachThanhToan, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
 
@@ -443,6 +450,41 @@ namespace BTL_QuanLyBanThuoc
                 txtKhachHang.ForeColor = Color.Gray; // Màu chữ xám
                 txtKhachHang.Text = "Nhập khách hàng";
             }
+        }
+
+        private void btnLuuTam_Click(object sender, EventArgs e)
+        {
+            trangThai = 0;
+            maKH = timKiemKHControl.maKhach;
+            maNV = comboBox2.SelectedValue.ToString();
+            if (khachThanhToan != 0)
+                khachThanhToan = float.Parse(txtKhachThanhToan.Text);
+            if (maKH == "")
+                maKH = null;
+            HoaDon HDluu = new HoaDon(maHD, maNV, maKH, ngayLap, tongTien, trangThai, phuongThucRadioButton(), khachThanhToan);
+            HoaDon.suaHD(dbConnect.ConnectionString, HDluu);
+            skipMessageClose = true;
+            this.Close();
+        }
+
+        private bool skipMessageClose = false;
+        private void frmBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (skipMessageClose==false)
+            {
+                DialogResult chon = MessageBox.Show("Hóa đơn chưa được lưu, bạn có muốn lưu tạm hóa đơn này chứ ?\n(Nếu chọn No sẽ xóa hết thông tin hóa đơn đang nhập)", "Lưu tạm hóa đơn", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (chon == DialogResult.Yes)
+                {
+                    btnLuuTam_Click(sender, e);
+                }
+                else if (chon == DialogResult.No)
+                {
+                    HoaDon.xoaHD(dbConnect.ConnectionString, maHD);
+                }
+                else if (chon == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
+
         }
     }
 }

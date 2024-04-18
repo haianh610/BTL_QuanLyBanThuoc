@@ -46,7 +46,6 @@ namespace BTL_QuanLyBanThuoc
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbTrangThai = new System.Windows.Forms.GroupBox();
             this.cbDaThoiViec = new System.Windows.Forms.CheckBox();
@@ -61,6 +60,7 @@ namespace BTL_QuanLyBanThuoc
             this.rbThangNay = new System.Windows.Forms.RadioButton();
             this.lbHoaDonTitle = new System.Windows.Forms.Label();
             this.tblNhanVienTableAdapter1 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblNhanVienTableAdapter();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +75,10 @@ namespace BTL_QuanLyBanThuoc
             ((System.ComponentModel.ISupportInitialize)(this.tblNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyKhoThuocTayDataSet11)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.gbTrangThai.SuspendLayout();
             this.gbThoiGian.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -252,17 +252,6 @@ namespace BTL_QuanLyBanThuoc
             this.txtTimKiem.TabIndex = 3;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(13, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gbTrangThai);
@@ -426,6 +415,17 @@ namespace BTL_QuanLyBanThuoc
             // 
             this.tblNhanVienTableAdapter1.ClearBeforeFill = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(13, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // sMaNV
             // 
             this.sMaNV.DataPropertyName = "sMaNV";
@@ -481,12 +481,12 @@ namespace BTL_QuanLyBanThuoc
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.colXemChiTiet.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colXemChiTiet.HeaderText = "Xem hóa đơn";
+            this.colXemChiTiet.HeaderText = "Xem nhân viên";
             this.colXemChiTiet.Name = "colXemChiTiet";
             this.colXemChiTiet.ReadOnly = true;
-            this.colXemChiTiet.Text = "Xem chi tiết";
+            this.colXemChiTiet.Text = "Xem";
             this.colXemChiTiet.UseColumnTextForButtonValue = true;
-            this.colXemChiTiet.Width = 96;
+            this.colXemChiTiet.Width = 72;
             // 
             // frmDSNV2
             // 
@@ -506,12 +506,12 @@ namespace BTL_QuanLyBanThuoc
             ((System.ComponentModel.ISupportInitialize)(this.quanLyKhoThuocTayDataSet11)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.gbTrangThai.ResumeLayout(false);
             this.gbTrangThai.PerformLayout();
             this.gbThoiGian.ResumeLayout(false);
             this.gbThoiGian.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
