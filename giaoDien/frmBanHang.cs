@@ -80,15 +80,6 @@ namespace BTL_QuanLyBanThuoc
             }
         }
 
-        private void txtMaHang_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                ChucNangChiTietHoaDon.themChiTietHD(dbConnect.ConnectionString, maHD, txtMaHang.Text, ((int)nudSoLuong.Value));
-                this.sP_ChiTietHoaDonTableAdapter2.Fill(this.quanLyKhoThuocTayDataSet1.SP_ChiTietHoaDon, maHD);
-
-            }
-        }
 
         private void loadTimKiem()
         {

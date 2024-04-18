@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTL_QuanLyBanThuoc", "BTL_QuanLyBanThuoc.csproj", "{70DDF586-1F70-4231-B40F-D1D1CC04E9E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhoThuocWF", "..\..\..\..\source\repos\QuanLyKhoThuocWF\QuanLyKhoThuocWF\QuanLyKhoThuocWF.csproj", "{EB31C058-DB51-42E0-9812-91D73702D687}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{70DDF586-1F70-4231-B40F-D1D1CC04E9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70DDF586-1F70-4231-B40F-D1D1CC04E9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70DDF586-1F70-4231-B40F-D1D1CC04E9E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB31C058-DB51-42E0-9812-91D73702D687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB31C058-DB51-42E0-9812-91D73702D687}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB31C058-DB51-42E0-9812-91D73702D687}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB31C058-DB51-42E0-9812-91D73702D687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

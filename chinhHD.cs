@@ -50,7 +50,12 @@ namespace BTL_QuanLyBanThuoc
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            DialogResult chon = MessageBox.Show("Bạn chắc chắn hủy hóa đơn " + maHD + " chứ ?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(chon == DialogResult.Yes)
+            {
+                HoaDon.huyHD(dbConnect.ConnectionString, maHD);
+                this.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
