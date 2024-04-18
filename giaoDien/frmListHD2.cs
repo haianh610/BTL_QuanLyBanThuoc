@@ -71,7 +71,7 @@ namespace BTL_QuanLyBanThuoc
                     HoaDon selectedHoaDon = HoaDon.GetHoaDon(dbConnect.ConnectionString, dgvHoaDon.CurrentRow.Cells["sMaHD"].Value.ToString());
                     if(selectedHoaDon.iTrangThai == 0)
                     {
-                        frmBanHang frm = new frmBanHang(selectedHoaDon);
+                        frmBanHang2 frm = new frmBanHang2(selectedHoaDon);
                         frm.FormClosed += frmBanHang_FormClosed;
                         frm.ShowDialog();
                     }

@@ -38,8 +38,7 @@ namespace BTL_QuanLyBanThuoc
 
         private void btnChucVu_Click(object sender, EventArgs e)
         {
-            frmNVtheoChucVu gt = new frmNVtheoChucVu();
-            gt.ShowDialog();
+
         }
     }
 }

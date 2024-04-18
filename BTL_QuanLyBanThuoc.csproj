@@ -80,11 +80,11 @@
     <Compile Include="Code\ConsoleApp.cs" />
     <Compile Include="Code\DungChung.cs" />
     <Compile Include="Code\MatHang.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="frmBanHang2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBanHang2.Designer.cs">
+      <DependentUpon>frmBanHang2.cs</DependentUpon>
     </Compile>
     <Compile Include="rptHoaDon.cs">
       <AutoGen>True</AutoGen>
@@ -116,12 +116,6 @@
     <Compile Include="frmThemNV.Designer.cs">
       <DependentUpon>frmThemNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSNV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDSNV.Designer.cs">
-      <DependentUpon>frmDSNV.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTamSuaHD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,12 +127,6 @@
     </Compile>
     <Compile Include="giaoDien\frmListHD2.Designer.cs">
       <DependentUpon>frmListHD2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmNVtheoChucVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNVtheoChucVu.Designer.cs">
-      <DependentUpon>frmNVtheoChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListNV.cs">
       <SubType>Form</SubType>
@@ -186,12 +174,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ThongKeGioiTinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKeGioiTinh.Designer.cs">
-      <DependentUpon>ThongKeGioiTinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +197,8 @@
     <EmbeddedResource Include="chinhHD.resx">
       <DependentUpon>chinhHD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    <EmbeddedResource Include="frmBanHang2.resx">
+      <DependentUpon>frmBanHang2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -225,9 +206,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInHoaDon.resx">
       <DependentUpon>frmInHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDSNV.resx">
-      <DependentUpon>frmDSNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSNV2.resx">
       <DependentUpon>frmDSNV2.cs</DependentUpon>
@@ -243,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="giaoDien\frmListHD2.resx">
       <DependentUpon>frmListHD2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNVtheoChucVu.resx">
-      <DependentUpon>frmNVtheoChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListNV.resx">
       <DependentUpon>frmListNV.cs</DependentUpon>
@@ -265,9 +240,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongKeGioiTinh.resx">
-      <DependentUpon>ThongKeGioiTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
