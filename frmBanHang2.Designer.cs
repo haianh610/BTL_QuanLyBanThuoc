@@ -88,6 +88,7 @@ namespace BTL_QuanLyBanThuoc
             this.ketQuaContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.ketQuaKHContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tblMatHangTableAdapter1 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblMatHangTableAdapter();
+            this.tblKhachHangTableAdapter2 = new BTL_QuanLyBanThuoc.QuanLyKhoThuocTayDataSet1TableAdapters.tblKhachHangTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).BeginInit();
@@ -766,6 +767,10 @@ namespace BTL_QuanLyBanThuoc
             // 
             this.tblMatHangTableAdapter1.ClearBeforeFill = true;
             // 
+            // tblKhachHangTableAdapter2
+            // 
+            this.tblKhachHangTableAdapter2.ClearBeforeFill = true;
+            // 
             // frmBanHang2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,5 +871,6 @@ namespace BTL_QuanLyBanThuoc
         private System.Windows.Forms.ComboBox cbbMatHang;
         private QuanLyKhoThuocTayDataSet1TableAdapters.tblMatHangTableAdapter tblMatHangTableAdapter1;
         private System.Windows.Forms.ComboBox cbbKhachHang;
+        private QuanLyKhoThuocTayDataSet1TableAdapters.tblKhachHangTableAdapter tblKhachHangTableAdapter2;
     }
 }

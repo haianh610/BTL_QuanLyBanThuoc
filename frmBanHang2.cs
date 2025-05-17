@@ -34,7 +34,7 @@ namespace BTL_QuanLyBanThuoc
             trangThai = hd.iTrangThai;
             phuongThuc = hd.iPhuongThucThanhToan;
             lbMaHD.Text =  "Mã HD: "+maHD;
-            cbbKhachHang.Text = maKH;
+
             lbNgayLap.Text = "Ngày lập: "+Convert.ToString(ngayLap);
             lbTongTien.Text = Convert.ToString(tongTien) + "đ";
             lbTrangThai.Text = HoaDon.checkTrangThaiHD(trangThai);
@@ -56,8 +56,10 @@ namespace BTL_QuanLyBanThuoc
         {
             this.sP_ChiTietHoaDonTableAdapter2.Fill(this.quanLyKhoThuocTayDataSet1.SP_ChiTietHoaDon, maHD);
             this.tblNhanVienTableAdapterDS1.Fill(this.quanLyKhoThuocTayDataSet1.tblNhanVien);
+            this.tblKhachHangTableAdapter2.Fill(this.quanLyKhoThuocTayDataSet1.tblKhachHang);
             tblMatHangTableAdapter1.Fill(this.quanLyKhoThuocTayDataSet1.tblMatHang);
             comboBox2.SelectedValue = maNV;
+            cbbKhachHang.SelectedValue = maKH;
         }
 
         private void dgvChiTietHD_CellContentClick(object sender, DataGridViewCellEventArgs e)

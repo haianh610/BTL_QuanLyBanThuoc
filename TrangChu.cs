@@ -12,31 +12,31 @@ namespace BTL_QuanLyBanThuoc
 
         private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //LoaiHang LH = new LoaiHang();
-            //LH.MdiParent = this;
-            //LH.Show();
+            fLoaiHang LH = new fLoaiHang();
+            LH.MdiParent = this;
+            LH.Show();
         }
 
         private void mặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MatHang MH = new MatHang();
-            //MH.MdiParent = this;
-            //MH.Show();
+            fMatHang MH = new fMatHang();
+            MH.MdiParent = this;
+            MH.Show();
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //NhaCungCap NCC = new NhaCungCap();
-            //NCC.MdiParent = this;
-            //NCC.Show();
+            fNhaCungCap NCC = new fNhaCungCap();
+            NCC.MdiParent = this;
+            NCC.Show();
         }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string SDT = "";
-            //DangNhap DN = new DangNhap(SDT);
-            //DN.MdiParent = this;
-            //DN.Show();
+            string SDT = "";
+            DangNhap DN = new DangNhap(SDT);
+            DN.MdiParent = this;
+            DN.Show();
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +65,34 @@ namespace BTL_QuanLyBanThuoc
             frmDSNV2 NV = new frmDSNV2();
             NV.MdiParent = this;
             NV.Show();
+        }
+
+        private void báoCáoNhậpXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBaoCaoHangHoaNhapXuat frm = new fBaoCaoHangHoaNhapXuat();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void danhSáchPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachPN frm = new DanhSachPN();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void timHangNCCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void cboToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

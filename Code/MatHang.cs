@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -74,6 +75,21 @@ namespace BTL_QuanLyBanThuoc.Code
             return matHang;
         }
 
+        public static bool checkThem(bool Ma, string sMaLH, string MaLHcu, string sTenHang, string Tencu, int iSoLuong, int Soluongcu, string sDVT, string DVTcu, double DonGiacu, double fDonGia, string sHangSX, string HangSXcu)
+        {
+            bool them = false;
+            if ((Ma == true && sMaLH == MaLHcu && sTenHang == Tencu && iSoLuong == Soluongcu && sDVT == DVTcu && fDonGia == DonGiacu && sHangSX == DVTcu) || Ma == false)
+            {
+                //đúng thì thêm
+                them = true;
+            }
+            else if (Ma == true && (sMaLH != MaLHcu || sTenHang != Tencu || iSoLuong != Soluongcu || sDVT != DVTcu || fDonGia != DonGiacu || sHangSX != HangSXcu))
+            {
+                //sai thì sửa
+                them = false;
+            }
+            return them;
+        }
 
         //Tạo listMH để chứa thông tin các KQ tìm kiếm
         public static List<MatHang> listMH = new List<MatHang>();
@@ -121,6 +137,90 @@ namespace BTL_QuanLyBanThuoc.Code
                     command.Dispose();
                     connection.Close();
                 }
+            }
+        }
+        //###########################  CHỨC NĂNG THÊM-SỬA-XÓA-TÌM KIẾM ###########################################################################################
+
+        //THÊM MẶT HÀNG
+        public static bool ThemMH(string sMaLH, string sMaHang, string sTenHang, int iSoLuong, string sDVT, double fDonGia, string sHangSX, string sMaNCC, int iTrangThai)
+        {
+            bool Ma = ThuVienChung.CheckExsit("tblMatHang", "sMaHang", sMaHang);
+
+            if (Ma == false)
+            {
+                //Ket noi Database (cnn : duong dan den Data)
+                using (SqlConnection cnn = new SqlConnection(dbConnect.ConnectionString))
+                {
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "UP_ThemMH";
+
+                        cmd.Parameters.AddWithValue("@sMaLH", sMaLH);
+                        cmd.Parameters.AddWithValue("@sMaHang", sMaHang);
+                        cmd.Parameters.AddWithValue("@sTenHang", sTenHang);
+                        cmd.Parameters.AddWithValue("@iSoLuong", iSoLuong);
+                        cmd.Parameters.AddWithValue("@sDVT", sDVT);
+                        cmd.Parameters.AddWithValue("@fDonGia", fDonGia);
+                        cmd.Parameters.AddWithValue("@sHangSX", sHangSX);
+                        cmd.Parameters.AddWithValue("@sMaNCC", sMaNCC);
+                        cmd.Parameters.AddWithValue("@iTrangThai", iTrangThai);
+                        cnn.Open();
+                        int i = cmd.ExecuteNonQuery();
+                        cnn.Close();
+                        return i > 0;
+                    }
+                }
+                return true;
+            }
+            else
+            { return false; }
+
+        }
+
+        //SỬA MẶT HÀNG
+        public static bool SuaMH(string sMaLH, string sMaHang, string sTenHang, int iSoLuong, string sDVT, double fDonGia, string sHangSX, string sMaNCC)
+        {
+            ThuVienChung t = new ThuVienChung();
+            string MaLHcu = t.LayGiaTriCu<string>("tblMatHang", "sMaLH", "sMaHang", sMaHang);
+            string Tencu = t.LayGiaTriCu<string>("tblMatHang", "sTenHang", "sMaHang", sMaHang);
+            string DVTcu = t.LayGiaTriCu<string>("tblMatHang", "sDVT", "sMaHang", sMaHang);
+            string HangSXcu = t.LayGiaTriCu<string>("tblMatHang", "sHangSX", "sMaHang", sMaHang);
+
+            int Soluongcu = t.LayGiaTriCu<int>("tblMatHang", "iSoLuong", "sMaHang", sMaHang);
+            double DonGiacu = t.LayGiaTriCu<double>("tblMatHang", "fDonGia", "sMaHang", sMaHang);
+
+
+            bool Ma = ThuVienChung.CheckExsit("tblMatHang", "sMaHang", sMaHang);
+            if (Ma == true && (sMaLH != MaLHcu || sTenHang != Tencu || iSoLuong != Soluongcu || sDVT != DVTcu || fDonGia != DonGiacu || sHangSX != HangSXcu))
+            {
+                using (SqlConnection cnn = new SqlConnection(dbConnect.ConnectionString))
+                {
+                    using (SqlCommand cmd = cnn.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "suaMatHang";
+                        cmd.Parameters.AddWithValue("@sMaHang", sMaHang);
+                        cmd.Parameters.AddWithValue("@sMaLHmoi", sMaLH);
+                        cmd.Parameters.AddWithValue("@sTenHangmoi", sTenHang);
+                        cmd.Parameters.AddWithValue("@iSoLuongmoi", iSoLuong);
+                        cmd.Parameters.AddWithValue("@sDVTmoi", sDVT);
+                        cmd.Parameters.AddWithValue("@fDonGiamoi", fDonGia);
+                        cmd.Parameters.AddWithValue("@sHangSXmoi", sHangSX);
+                        cmd.Parameters.AddWithValue("@sMaNCCmoi", sMaNCC);
+
+                        cnn.Open();
+                        int i = cmd.ExecuteNonQuery();
+                        cnn.Close();
+                        return i > 0;
+                    }
+                }
+                return true;
+
+            }
+            else
+            {
+                return false;
             }
         }
     }

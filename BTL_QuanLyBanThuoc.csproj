@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoHangHoaNhapXuat.cs">
+      <DependentUpon>BaoCaoHangHoaNhapXuat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="chinhHD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +86,113 @@
     <Compile Include="Code\ConsoleApp.cs" />
     <Compile Include="Code\DungChung.cs" />
     <Compile Include="Code\MatHang.cs" />
+    <Compile Include="Code\NCC.cs" />
+    <Compile Include="Code\PhieuNhap.cs" />
+    <Compile Include="Code\SourceChiTietPhieuNhap.cs" />
+    <Compile Include="CrystalReport1MH_NCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1MH_NCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportNCC_Hang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportNCC_Hang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachPN.Designer.cs">
+      <DependentUpon>DanhSachPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBaoCaoHangHoaNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaoCaoHangHoaNhapXuat.Designer.cs">
+      <DependentUpon>fBaoCaoHangHoaNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLoaiHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLoaiHang.Designer.cs">
+      <DependentUpon>fLoaiHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMatHang.Designer.cs">
+      <DependentUpon>fMatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhaCungCap.Designer.cs">
+      <DependentUpon>fNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInBaoCao.Designer.cs">
+      <DependentUpon>FormInBaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBanHang2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBanHang2.Designer.cs">
       <DependentUpon>frmBanHang2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="giaoDien\ChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giaoDien\ChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InPhieuNhap.cs">
+      <DependentUpon>InPhieuNhap.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LoaiHang.cs" />
+    <Compile Include="NhaCungCap.cs" />
+    <Compile Include="QuanLyKhoThuocTayDataSet.cs">
+      <DependentUpon>QuanLyKhoThuocTayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhoThuocTayDataSet.Designer.cs">
+      <DependentUpon>QuanLyKhoThuocTayDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="QuanLyKhoThuocTayDataSet2.Designer.cs">
+      <DependentUpon>QuanLyKhoThuocTayDataSet2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="rptHoaDon.cs">
       <AutoGen>True</AutoGen>
@@ -174,6 +282,19 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinPN.Designer.cs">
+      <DependentUpon>ThongTinPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuVienChung.cs" />
+    <Compile Include="timKiemMHPNControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="timKiemMHPNControl.Designer.cs">
+      <DependentUpon>timKiemMHPNControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,11 +315,60 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BaoCaoHangHoaNhapXuat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoHangHoaNhapXuat.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="chinhHD.resx">
       <DependentUpon>chinhHD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1MH_NCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1MH_NCC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportNCC_Hang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportNCC_Hang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachPN.resx">
+      <DependentUpon>DanhSachPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBaoCaoHangHoaNhapXuat.resx">
+      <DependentUpon>fBaoCaoHangHoaNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLoaiHang.resx">
+      <DependentUpon>fLoaiHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMatHang.resx">
+      <DependentUpon>fMatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNhaCungCap.resx">
+      <DependentUpon>fNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInBaoCao.resx">
+      <DependentUpon>FormInBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBanHang2.resx">
       <DependentUpon>frmBanHang2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="giaoDien\ChiTietPhieuNhap.resx">
+      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InPhieuNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InPhieuNhap.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -241,6 +411,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinPN.resx">
+      <DependentUpon>ThongTinPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="timKiemMHPNControl.resx">
+      <DependentUpon>timKiemMHPNControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +434,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyKhoThuocTayDataSet.xsc">
+      <DependentUpon>QuanLyKhoThuocTayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhoThuocTayDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhoThuocTayDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyKhoThuocTayDataSet.xss">
+      <DependentUpon>QuanLyKhoThuocTayDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QuanLyKhoThuocTayDataSet1.xsc">
       <DependentUpon>QuanLyKhoThuocTayDataSet1.xsd</DependentUpon>
     </None>
@@ -269,6 +456,17 @@
     <None Include="QuanLyKhoThuocTayDataSet1.xss">
       <DependentUpon>QuanLyKhoThuocTayDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="QuanLyKhoThuocTayDataSet2.xsc">
+      <DependentUpon>QuanLyKhoThuocTayDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhoThuocTayDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhoThuocTayDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyKhoThuocTayDataSet2.xss">
+      <DependentUpon>QuanLyKhoThuocTayDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Resources\print_FILL0_wght400_GRAD0_opsz24 1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +477,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eyes-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

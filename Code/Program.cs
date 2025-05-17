@@ -21,21 +21,7 @@ namespace BTL_QuanLyBanThuoc
         }
 
 
-        //public static bool xoaNXB(string connection, string sMaNXB)
-        //{
-        //    string deletesql = "DELETE FROM tblNXB WHERE sMaNXB=" + sMaNXB + "";
-        //    using (SqlConnection cnn = new SqlConnection(connection))
-        //    {
-        //        using (SqlCommand cmddelete = new SqlCommand(deletesql, cnn))
-        //        {
-        //            cmddelete.CommandType = System.Data.CommandType.Text;
-        //            cnn.Open();
-        //            int i = cmddelete.ExecuteNonQuery();
-        //            cnn.Close();
-        //            return i > 0;
-        //        }
-        //    }
-        //}
+
 
 
 
